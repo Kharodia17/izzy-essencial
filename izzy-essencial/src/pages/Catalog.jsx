@@ -8,6 +8,7 @@ import CategoryFilter from "../components/catalog/CategoryFilter.jsx";
 import ProductGrid from "../components/catalog/ProductGrid.jsx";
 import ProductModal from "../components/catalog/ProductModal.jsx";
 import LoadingSpinner from "../components/shared/LoadingSpinner.jsx";
+import Footer from "../components/shared/Footer.jsx";
 
 export default function Catalog() {
   const { t } = useLanguage();
@@ -60,22 +61,7 @@ export default function Catalog() {
         {loading ? <LoadingSpinner /> : <ProductGrid products={filtered} onSelect={setSelected} />}
       </div>
 
-      {/* Footer */}
-      <footer className="px-4 md:px-margin-desktop py-8 border-t border-outline-variant mt-8">
-        <div className="max-w-6xl mx-auto flex flex-col items-center gap-3 text-center">
-          <div className="flex items-center gap-2">
-            <img src="/logo.png" alt="Izzy Essencial" className="w-8 h-8 object-contain rounded-full" />
-            <span className="font-display font-bold text-[15px] text-on-surface">Izzy Essencial</span>
-          </div>
-          <div className="flex flex-wrap justify-center gap-3 font-label text-label-md text-on-surface-variant">
-            <span>{t.contacts}</span>
-            <span>{t.hours}</span>
-            <a href="/location" className="hover:text-primary">{t.location}</a>
-            <a href="#" className="hover:text-primary">{t.terms}</a>
-          </div>
-          <p className="font-label text-label-md text-on-surface-variant">{t.copyright}</p>
-        </div>
-      </footer>
+      <Footer />
 
       {selected && <ProductModal product={selected} onClose={() => setSelected(null)} />}
     </div>
