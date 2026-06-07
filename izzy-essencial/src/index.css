@@ -50,10 +50,16 @@
   to   { opacity: 1; transform: scale(1); }
 }
 
-.anim-fade-up   { animation: fade-up   0.55s cubic-bezier(.22,.68,0,1.2) both; }
-.anim-fade-in   { animation: fade-in   0.45s ease both; }
-.anim-scale-in  { animation: scale-in  0.5s  cubic-bezier(.22,.68,0,1.2) both; }
-.anim-slide-left { animation: slide-in-left 0.5s cubic-bezier(.22,.68,0,1.2) both; }
+/* Elements start hidden; animations play only when .in-view is added by IntersectionObserver */
+.anim-fade-up    { opacity: 0; transform: translateY(28px); transition: none; }
+.anim-fade-in    { opacity: 0; transition: none; }
+.anim-scale-in   { opacity: 0; transform: scale(0.88); transition: none; }
+.anim-slide-left { opacity: 0; transform: translateX(-24px); transition: none; }
+
+.anim-fade-up.in-view    { animation: fade-up   0.6s cubic-bezier(.22,.68,0,1.2) both; }
+.anim-fade-in.in-view    { animation: fade-in   0.45s ease both; }
+.anim-scale-in.in-view   { animation: scale-in  0.55s cubic-bezier(.22,.68,0,1.2) both; }
+.anim-slide-left.in-view { animation: slide-in-left 0.55s cubic-bezier(.22,.68,0,1.2) both; }
 
 /* Stagger delays */
 .delay-0   { animation-delay: 0ms; }
