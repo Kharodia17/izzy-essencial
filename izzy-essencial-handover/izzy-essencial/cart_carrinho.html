@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-MZ"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Izzy Essencial - Carrinho</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "background": "#f9f9ff",
+                "on-primary-fixed-variant": "#004c6a",
+                "surface-container-lowest": "#ffffff",
+                "primary-fixed-dim": "#7ed0ff",
+                "tertiary": "#745b00",
+                "surface-container-highest": "#d5e3ff",
+                "inverse-surface": "#133155",
+                "on-error": "#ffffff",
+                "on-primary-fixed": "#001e2d",
+                "on-primary-container": "#fcfcff",
+                "on-primary": "#ffffff",
+                "on-tertiary-fixed-variant": "#584400",
+                "tertiary-fixed-dim": "#ebc246",
+                "surface-container-low": "#f0f3ff",
+                "on-background": "#001c3b",
+                "on-surface": "#001c3b",
+                "outline": "#6f787f",
+                "surface-container": "#e7eeff",
+                "on-secondary-fixed": "#00210c",
+                "on-secondary": "#ffffff",
+                "secondary-container": "#9df3b1",
+                "surface-dim": "#c7dbff",
+                "primary": "#006388",
+                "inverse-primary": "#7ed0ff",
+                "surface": "#f9f9ff",
+                "on-surface-variant": "#3f484e",
+                "secondary-fixed-dim": "#84d99a",
+                "on-tertiary": "#ffffff",
+                "surface-container-high": "#dee9ff",
+                "surface-bright": "#f9f9ff",
+                "primary-fixed": "#c5e7ff",
+                "on-error-container": "#93000a",
+                "tertiary-fixed": "#ffe08b",
+                "outline-variant": "#bfc8cf",
+                "on-secondary-container": "#18713d",
+                "secondary": "#106d39",
+                "inverse-on-surface": "#ebf1ff",
+                "error": "#ba1a1a",
+                "error-container": "#ffdad6",
+                "secondary-fixed": "#a0f5b4",
+                "tertiary-container": "#cda72b",
+                "surface-variant": "#d5e3ff",
+                "primary-container": "#187da8",
+                "on-secondary-fixed-variant": "#005228",
+                "on-tertiary-fixed": "#241a00",
+                "surface-tint": "#00658b",
+                "on-tertiary-container": "#4f3d00"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "lg": "48px",
+                "xl": "80px",
+                "xs": "4px",
+                "margin-desktop": "64px",
+                "sm": "12px",
+                "gutter": "24px",
+                "md": "24px",
+                "margin-mobile": "16px",
+                "base": "8px"
+            },
+            "fontFamily": {
+                "label-md": ["Inter"],
+                "headline-lg": ["Plus Jakarta Sans"],
+                "body-lg": ["Plus Jakarta Sans"],
+                "headline-md": ["Plus Jakarta Sans"],
+                "headline-lg-mobile": ["Plus Jakarta Sans"],
+                "headline-xl": ["Plus Jakarta Sans"],
+                "body-md": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+                "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-nav-pill {
+            background-color: #9df3b1; /* secondary-container */
+            color: #18713d; /* on-secondary-container */
+        }
+        .smooth-shadow {
+            box-shadow: 0 4px 12px -2px rgba(30, 58, 95, 0.15);
+        }
+        body {
+            background-color: #f9f9ff;
+            color: #001c3b;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="flex flex-col min-h-screen">
+<!-- TopAppBar -->
+<header class="bg-surface sticky top-0 z-50 h-16 w-full flex justify-between items-center px-margin-mobile border-b border-outline-variant shadow-sm">
+<div class="flex items-center gap-base">
+<span class="material-symbols-outlined text-primary">menu</span>
+<h1 class="font-headline-md text-headline-md-mobile text-primary font-bold">Izzy Essencial</h1>
+</div>
+<button class="text-primary font-bold hover:bg-surface-container-low transition-colors px-2 py-1 rounded">
+            EN/PT
+        </button>
+</header>
+<main class="flex-grow pb-32">
+<!-- Progress Indicator -->
+<div class="px-margin-mobile py-base flex items-center justify-between text-on-surface-variant font-label-md text-label-md">
+<div class="flex items-center gap-xs text-primary font-bold">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">shopping_cart</span>
+<span>Carrinho</span>
+</div>
+<div class="h-px bg-outline-variant flex-grow mx-4"></div>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">local_shipping</span>
+<span>Entrega</span>
+</div>
+</div>
+<!-- Cart Content -->
+<section class="px-margin-mobile mt-4 space-y-4">
+<!-- Cart Item 1 -->
+<div class="bg-surface-container-lowest p-4 rounded-xl smooth-shadow flex gap-4 items-center">
+<div class="w-20 h-20 bg-surface-container rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A premium bottle of liquid cleaning detergent with a modern minimalist label, placed on a bright white surface. Soft daylight illuminates the product, creating a clean and professional corporate aesthetic consistent with a high-end Mozambique convenience store. The color palette features whites and soft blues." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-WTB4WYcY7VG1UNoZVLxDDPIiBEDg5H3eHZH9n00r5FJMJ00OiKNKjayM57VR7LrXgI8DT-NlYQQRHFQHNuxExKjLHrFisyzSgs-gsNhKWrbI6SaYptuuTSj6riH9ZYLZTF7x8bPRM4F0IXjfusXQZJoVG3rfjJCM0vw9xJq-PB3QtpH_1QVYl5mDacGL_TdHWvaGGMQmiGTZEzj2gjaa37WqVPXhjve4D4hsie55W-SDUUzb1YJiYOZf5PbdqDp5HYfHBUkO8Dm9"/>
+</div>
+<div class="flex-grow">
+<h3 class="font-headline-md text-[16px] leading-tight text-on-surface">Detergente Multiuso Izzy</h3>
+<p class="text-on-surface-variant font-label-md text-[14px]">Limpeza Profunda • 1L</p>
+<div class="mt-2 flex items-center justify-between">
+<span class="text-primary font-bold font-body-lg text-body-md">1.250 MT</span>
+<div class="flex items-center bg-surface-container rounded-full px-2 py-1">
+<button class="w-6 h-6 flex items-center justify-center text-primary active:scale-90 transition-transform"><span class="material-symbols-outlined text-[18px]">remove</span></button>
+<span class="mx-3 font-bold text-on-surface">1</span>
+<button class="w-6 h-6 flex items-center justify-center text-primary active:scale-90 transition-transform"><span class="material-symbols-outlined text-[18px]">add</span></button>
+</div>
+</div>
+</div>
+</div>
+<!-- Cart Item 2 -->
+<div class="bg-surface-container-lowest p-4 rounded-xl smooth-shadow flex gap-4 items-center">
+<div class="w-20 h-20 bg-surface-container rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A high-quality packet of premium jasmine rice in a clear and modern packaging design, showcasing the grains. The setting is a bright, modern kitchen environment with soft ambient lighting that highlights the product's reliability and quality. The overall mood is approachable and trustworthy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFPWO7VF8mXICxcQoqB51lYHLHzhaCNL9Ew-11TehFfuCAtRUog5OlJF6BPUYOlnp3nLUwD23zw-uKBEWbktdNDDDZMe8nrC1sjauHOzeKgLKs0lIMze_yXgqzlH8t-gRUkkcQcVtq9puVGrebrfyoGPNrbaokpuEZLSJeIN19uBPc3kLyaJs2GdIhKtVFW7n7dTR11VKUUuJDcvJkXsFd2BYnNUvh9E2kcHBOpyeiFj62EhjV3Skfp0HTf7022_tqBGiTy-Es6omE"/>
+</div>
+<div class="flex-grow">
+<h3 class="font-headline-md text-[16px] leading-tight text-on-surface">Arroz Jasmim Premium</h3>
+<p class="text-on-surface-variant font-label-md text-[14px]">Importado • 5kg</p>
+<div class="mt-2 flex items-center justify-between">
+<span class="text-primary font-bold font-body-lg text-body-md">850 MT</span>
+<div class="flex items-center bg-surface-container rounded-full px-2 py-1">
+<button class="w-6 h-6 flex items-center justify-center text-primary active:scale-90 transition-transform"><span class="material-symbols-outlined text-[18px]">remove</span></button>
+<span class="mx-3 font-bold text-on-surface">2</span>
+<button class="w-6 h-6 flex items-center justify-center text-primary active:scale-90 transition-transform"><span class="material-symbols-outlined text-[18px]">add</span></button>
+</div>
+</div>
+</div>
+</div>
+<!-- Empty Space/Bento Style Promotional Tag -->
+<div class="bg-secondary-container p-4 rounded-xl border border-secondary flex items-center gap-4">
+<div class="bg-on-secondary w-10 h-10 rounded-full flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">local_offer</span>
+</div>
+<div>
+<h4 class="font-bold text-on-secondary-container font-label-md text-label-md">Promoção de Verão!</h4>
+<p class="text-on-secondary-container text-[12px]">Ganhe 10% de desconto em artigos de limpeza.</p>
+</div>
+</div>
+<!-- Delivery Notice -->
+<div class="bg-surface-container-high p-4 rounded-xl flex flex-col gap-2">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined">map</span>
+<span class="font-bold text-label-md">Entregas em Moçambique</span>
+</div>
+<p class="text-on-surface-variant text-[14px] font-body-md">Realizamos entregas rápidas em Maputo, Matola e Beira. Prazo estimado: 2 a 4 horas.</p>
+<div class="mt-2 flex items-center justify-between text-[14px] text-on-surface font-semibold">
+<span>Taxa de Entrega:</span>
+<span>150 MT</span>
+</div>
+</div>
+</section>
+<!-- Summary -->
+<section class="px-margin-mobile mt-8 space-y-2 border-t border-outline-variant pt-6">
+<div class="flex justify-between items-center text-on-surface-variant">
+<span class="font-body-md">Subtotal</span>
+<span class="font-bold">2.950 MT</span>
+</div>
+<div class="flex justify-between items-center text-on-surface-variant">
+<span class="font-body-md">Taxa de Entrega</span>
+<span class="font-bold">150 MT</span>
+</div>
+<div class="flex justify-between items-center mt-4 pt-4 border-t border-outline-variant">
+<span class="font-headline-md text-headline-md-mobile text-on-surface">Total</span>
+<span class="font-headline-md text-headline-md-mobile text-primary">3.100 MT</span>
+</div>
+</section>
+<!-- Fixed Bottom Action Area -->
+<div class="fixed bottom-[72px] left-0 right-0 p-margin-mobile bg-surface/80 backdrop-blur-md z-40">
+<button class="w-full bg-primary text-on-primary py-4 rounded-full font-bold text-lg active:scale-95 transition-all shadow-lg flex items-center justify-center gap-2">
+<span>Finalizar Compra</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 right-0 bg-surface flex justify-around items-center py-base px-2 border-t border-outline-variant z-50">
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high px-4 py-1 rounded-full transition-colors cursor-pointer">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-md text-label-md">Início</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high px-4 py-1 rounded-full transition-colors cursor-pointer">
+<span class="material-symbols-outlined">storefront</span>
+<span class="font-label-md text-label-md">Catálogo</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">shopping_cart</span>
+<span class="font-label-md text-label-md">Carrinho</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high px-4 py-1 rounded-full transition-colors cursor-pointer">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-md text-label-md">Perfil</span>
+</div>
+</nav>
+<!-- Footer Space -->
+<footer class="bg-surface-container p-xl text-center mb-20 flex flex-col items-center gap-gutter">
+<div class="font-headline-md text-headline-md text-on-surface font-bold">Izzy Essencial</div>
+<p class="font-body-md text-body-md text-on-surface-variant">© 2024 Izzy Essencial. Mozambique.</p>
+<div class="flex flex-wrap justify-center gap-4 text-on-surface-variant font-body-md text-body-md">
+<span class="hover:text-primary transition-all cursor-pointer">Contactos</span>
+<span class="hover:text-primary transition-all cursor-pointer">Localização</span>
+<span class="hover:text-primary transition-all cursor-pointer">Termos</span>
+</div>
+</footer>
+<script>
+        // Micro-interactions for quantity buttons
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', function() {
+                this.classList.add('scale-90');
+                setTimeout(() => this.classList.remove('scale-90'), 150);
+            });
+        });
+    </script>
+</body></html>

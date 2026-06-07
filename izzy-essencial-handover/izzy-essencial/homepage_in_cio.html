@@ -1,0 +1,254 @@
+<!DOCTYPE html><html class="light" lang="pt"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Izzy Essencial - Your Daily Essentials</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "background": "#f9f9ff",
+                    "on-primary-fixed-variant": "#004c6a",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed-dim": "#7ed0ff",
+                    "tertiary": "#745b00",
+                    "surface-container-highest": "#d5e3ff",
+                    "inverse-surface": "#133155",
+                    "on-error": "#ffffff",
+                    "on-primary-fixed": "#001e2d",
+                    "on-primary-container": "#fcfcff",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#584400",
+                    "tertiary-fixed-dim": "#ebc246",
+                    "surface-container-low": "#f0f3ff",
+                    "on-background": "#001c3b",
+                    "on-surface": "#001c3b",
+                    "outline": "#6f787f",
+                    "surface-container": "#e7eeff",
+                    "on-secondary-fixed": "#00210c",
+                    "on-secondary": "#ffffff",
+                    "secondary-container": "#9df3b1",
+                    "surface-dim": "#c7dbff",
+                    "primary": "#006388",
+                    "inverse-primary": "#7ed0ff",
+                    "surface": "#f9f9ff",
+                    "on-surface-variant": "#3f484e",
+                    "secondary-fixed-dim": "#84d99a",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-high": "#dee9ff",
+                    "surface-bright": "#f9f9ff",
+                    "primary-fixed": "#c5e7ff",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed": "#ffe08b",
+                    "outline-variant": "#bfc8cf",
+                    "on-secondary-container": "#18713d",
+                    "secondary": "#106d39",
+                    "inverse-on-surface": "#ebf1ff",
+                    "error": "#ba1a1a",
+                    "error-container": "#ffdad6",
+                    "secondary-fixed": "#a0f5b4",
+                    "tertiary-container": "#cda72b",
+                    "surface-variant": "#d5e3ff",
+                    "primary-container": "#187da8",
+                    "on-secondary-fixed-variant": "#005228",
+                    "on-tertiary-fixed": "#241a00",
+                    "surface-tint": "#00658b",
+                    "on-tertiary-container": "#4f3d00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "lg": "48px",
+                    "xl": "80px",
+                    "xs": "4px",
+                    "margin-desktop": "64px",
+                    "sm": "12px",
+                    "gutter": "24px",
+                    "md": "24px",
+                    "margin-mobile": "16px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "label-md": ["Inter"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "headline-lg-mobile": ["Plus Jakarta Sans"],
+                    "headline-xl": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                    "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-nav-pill {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at top right, #c5e7ff 0%, #f9f9ff 70%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface flex justify-between items-center px-margin-mobile w-full z-50 h-16 docked full-width top-0 sticky border-b border-outline-variant dark:border-outline shadow-sm">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">menu</span>
+<span class="font-headline-md text-headline-md-mobile text-primary dark:text-primary-fixed-dim font-bold">Izzy Essencial</span>
+</div>
+<button class="text-primary font-bold hover:bg-surface-container-low transition-colors px-4 py-2 rounded-lg active:scale-95 duration-150">
+            EN/PT
+        </button>
+</header>
+<main class="flex-grow">
+<!-- Hero Section -->
+<section class="hero-gradient px-margin-mobile py-xl flex flex-col items-center text-center transition-all duration-700 opacity-100 translate-y-0">
+<div class="mb-base animate-bounce">
+<img alt="Izzy Essencial Logo" class="w-48 h-48 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADVIOQ6aIvOddCTQYswDVPBmDzn1tUcuAeG7U3Dn0158sTN_DTZ1h4WElbXG74jYtGbJS-uo7T5XDIKb2J86C04T2uW1q7TubbGzQQGfokBitmpmXpWSYi42jZUXDGmwXgqfJ9jcfO_jqVTs2ThOnQiokGA5tD0PZWEbNfC79E2wlNnb4B0thVF-ZVBhXyqDyXar8spN9k_2nIyJE-rKWrlvwXPZWueLV0VePdIZq37sTG4BA75PFG92LpPVJrVDOZUusyL0k5kKvL">
+</div>
+<h1 class="font-headline-xl text-headline-lg-mobile mb-md text-on-surface">
+                Your Daily Essentials in Mozambique
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md mb-lg">
+                Os Seus Essenciais Diários em Moçambique. Facilidade e conveniência para o seu dia a dia.
+            </p>
+<div class="flex flex-col gap-base w-full max-w-xs">
+<button class="bg-primary text-on-primary font-label-md text-label-md py-4 rounded-xl shadow-lg hover:shadow-xl transition-all active:scale-95 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">picture_as_pdf</span>
+                    Ver Catálogo PDF
+                </button>
+<button class="border-2 border-secondary text-secondary font-label-md text-label-md py-4 rounded-xl hover:bg-secondary-container/20 transition-all active:scale-95">
+                    View PDF Catalog
+                </button>
+</div>
+</section>
+<!-- Categories Bento Grid -->
+<section class="px-margin-mobile py-lg transition-all duration-700 opacity-100 translate-y-0">
+<h2 class="font-headline-md text-headline-md mb-lg text-on-surface border-l-4 border-primary pl-4">Categorias Populares</h2>
+<div class="grid grid-cols-2 gap-base h-[500px]">
+<!-- Featured: Cleaning -->
+<div class="col-span-2 relative rounded-xl overflow-hidden shadow-sm group">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A clean, modern laundry room scene featuring bright daylight and orderly shelves. Bottles of professional-grade cleaning supplies in crisp blue and white packaging are arranged neatly. The atmosphere is refreshing and hygienic, using a primary blue color scheme with soft shadows to highlight premium domestic hygiene products." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLlt9CQ8tmt3O0RqehmwoWaprlRLL0pkW_ulr31gy9xogjMxtpRX8VRo4xSAGaHxrD_rqVIq_TTo7bpyTJxOjF5RL_9yfUirq_BD9KoZDjXi1XPic6NK-4xdnMTsKx_NDKPMJSaEQJJ6v-_qDTYQWLIxVeH3bQQ2C6exXfaiQFxIKm-BzTAtxMNQMiqOUjrfyzQhKEzCBEF28xaciNk0yle2cylPnygDVFrJ2XBAtbdpfsQQgn7bV74h1RFb9ncr4ZnpH25Y_mg-VU">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-md">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-xs font-bold mb-2 inline-block">Cleaning Products</span>
+<h3 class="text-white font-headline-md text-headline-md">Limpeza Impecável</h3>
+</div>
+</div>
+<!-- General Items -->
+<div class="relative rounded-xl overflow-hidden shadow-sm group">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A collection of diverse household essential items like kitchenware, batteries, and small tools arranged in a stylish flat-lay composition. The lighting is soft and neutral, emphasizing accessibility and variety. The aesthetic is clean and contemporary, following the Izzy Essencial brand colors of navy and soft whites for a reliable feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEEiINjG_ireaEMWuXdZO5Plg1fjZhfxCJLBZx6vQSCTo2TJFnhZXUI1PfMnEqyh51EGRgRUbAA2t6KT7p7f0lEpjuh0U1wAlogafMxCJWhZglvoixUO-asRPPntp6iiyUGaDPz18AYTYjfHizOwFwiMCNZWOt0LQIx56v76AUj9N8kWIfVIMQINGaCrlRbmdegw70zDxzOT-_VKgKVQoimBrlef4G18yiHmO3wMxKY2bNas816uXlLa4y4QXzDj35J3MaTtTLZpVA">
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/60 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-md">
+<h3 class="text-white font-label-md text-label-md">Artigos Gerais</h3>
+</div>
+</div>
+<!-- Groceries -->
+<div class="relative rounded-xl overflow-hidden shadow-sm group">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A high-key photograph of fresh, colorful groceries including fruits and staples in a rustic wooden basket. The scene is illuminated by warm, natural sunlight typical of a Mozambican morning, creating an inviting and trustworthy vibe. The composition is vibrant yet professional, highlighting quality and freshness within a modern corporate retail style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQ8EvdKhX9F63nBR6dfP1-IkCUxjB5tORf-lyFoLU4HxJOLV7TGlz5MYhMXh8d_Uh3LPbchGWm4JLkSecLiPBKYu5Q2RsPb8ZmcFTlkQgS98eapSSHogEpfStwM70GprQjNvB7hqnwn4vzLJexS3cgygatmWje8UNEs3It4aUrk3y9S-2i4C1SU0NV1NhoJPoFqASBqP3Hky33ha6Xhaz2fwoqYaVNPFLB23SVmdHYQVH7iW2ytKOXhkbcsKpDhcqcV4njpbQYdKLK">
+<div class="absolute inset-0 bg-gradient-to-t from-tertiary-container/80 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-md">
+<h3 class="text-white font-label-md text-label-md">Mercearia</h3>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter / Info Section -->
+<section class="px-margin-mobile py-lg bg-surface-container transition-all duration-700 opacity-100 translate-y-0">
+<div class="glass-card p-lg rounded-xl flex flex-col gap-md items-center text-center">
+<div class="bg-primary/10 p-md rounded-full">
+<span class="material-symbols-outlined text-primary scale-150">notifications_active</span>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Promoções Semanais</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Subscreva para receber o catálogo atualizado e promoções exclusivas.</p>
+</div>
+<div class="w-full space-y-base">
+<input class="w-full px-4 py-3 rounded-lg border border-outline focus:border-primary focus:ring-2 focus:ring-primary/20 bg-surface" placeholder="O seu email" type="email">
+<button class="w-full bg-primary text-on-primary py-3 rounded-lg font-bold">Subscrever Agora</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container dark:bg-surface-container-highest w-full rounded-none flex flex-col items-center gap-gutter p-xl text-center mb-20">
+<div class="font-headline-md text-headline-md text-on-surface font-bold">Izzy Essencial</div>
+<div class="flex flex-wrap justify-center gap-md">
+<a class="text-on-surface-variant hover:text-primary transition-all duration-300" href="#">Contactos</a>
+<span class="text-on-surface-variant">Horário: 08:00 - 20:00</span>
+<a class="text-on-surface-variant hover:text-primary transition-all duration-300" href="#">Localização</a>
+<a class="text-on-surface-variant hover:text-primary transition-all duration-300" href="#">Termos</a>
+</div>
+<div class="text-on-surface-variant opacity-60 font-body-md text-body-md">
+            © 2026 Izzy Essencial. Mozambique.
+        </div>
+</footer>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 right-0 flex justify-around items-center py-base px-2 bg-surface dark:bg-surface-container-lowest border-t border-outline-variant dark:border-outline shadow-lg z-50">
+<div class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 active-nav-pill active:scale-90 duration-200 cursor-pointer">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-md text-label-md">Início</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high p-2 rounded-lg active:scale-90 duration-200 cursor-pointer">
+<span class="material-symbols-outlined">storefront</span>
+<span class="font-label-md text-label-md">Catálogo</span>
+</div>
+
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high p-2 rounded-lg active:scale-90 duration-200 cursor-pointer"><span class="material-symbols-outlined">location_on</span><span class="font-label-md text-label-md">Localização</span></div>
+</nav>
+<script>
+        // Simple language toggle logic
+        const langBtn = document.querySelector('header button');
+        langBtn.addEventListener('click', () => {
+            const current = langBtn.textContent.trim();
+            langBtn.textContent = current === 'EN/PT' ? 'PT/EN' : 'EN/PT';
+        });
+
+        // Add some subtle scroll revealing
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+            observer.observe(section);
+        });
+    </script>
+
+
+
+
+</body></html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html><html lang="pt"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Izzy Essencial - Catálogo</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#f9f9ff",
+                        "on-primary-fixed-variant": "#004c6a",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed-dim": "#7ed0ff",
+                        "tertiary": "#745b00",
+                        "surface-container-highest": "#d5e3ff",
+                        "inverse-surface": "#133155",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed": "#001e2d",
+                        "on-primary-container": "#fcfcff",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#584400",
+                        "tertiary-fixed-dim": "#ebc246",
+                        "surface-container-low": "#f0f3ff",
+                        "on-background": "#001c3b",
+                        "on-surface": "#001c3b",
+                        "outline": "#6f787f",
+                        "surface-container": "#e7eeff",
+                        "on-secondary-fixed": "#00210c",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#9df3b1",
+                        "surface-dim": "#c7dbff",
+                        "primary": "#006388",
+                        "inverse-primary": "#7ed0ff",
+                        "surface": "#f9f9ff",
+                        "on-surface-variant": "#3f484e",
+                        "secondary-fixed-dim": "#84d99a",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-high": "#dee9ff",
+                        "surface-bright": "#f9f9ff",
+                        "primary-fixed": "#c5e7ff",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed": "#ffe08b",
+                        "outline-variant": "#bfc8cf",
+                        "on-secondary-container": "#18713d",
+                        "secondary": "#106d39",
+                        "inverse-on-surface": "#ebf1ff",
+                        "error": "#ba1a1a",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed": "#a0f5b4",
+                        "tertiary-container": "#cda72b",
+                        "surface-variant": "#d5e3ff",
+                        "primary-container": "#187da8",
+                        "on-secondary-fixed-variant": "#005228",
+                        "on-tertiary-fixed": "#241a00",
+                        "surface-tint": "#00658b",
+                        "on-tertiary-container": "#4f3d00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "48px",
+                        "xl": "80px",
+                        "xs": "4px",
+                        "margin-desktop": "64px",
+                        "sm": "12px",
+                        "gutter": "24px",
+                        "md": "24px",
+                        "margin-mobile": "16px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Inter"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "headline-xl": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                        "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .catalog-shadow {
+            box-shadow: 0 4px 12px rgba(30, 58, 95, 0.15);
+        }
+        .active-nav-pill {
+            background-color: #9df3b1;
+            color: #18713d;
+            border-radius: 9999px;
+            padding: 4px 16px;
+        }
+    </style>
+</head>
+<body class="bg-background font-body-md text-on-surface overflow-x-hidden pb-24">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface text-primary dark:text-primary-fixed-dim font-headline-md text-headline-md-mobile docked full-width top-0 sticky border-b border-outline-variant dark:border-outline shadow-sm flex justify-between items-center px-margin-mobile w-full z-50 h-16">
+<div class="flex items-center gap-base">
+<button class="material-symbols-outlined p-2 hover:bg-surface-container-low transition-colors rounded-full">arrow_back</button>
+<h1 class="font-headline-md text-headline-md-mobile text-primary dark:text-primary-fixed-dim font-bold">Izzy Essencial</h1>
+</div>
+<button class="font-label-md text-label-md text-primary font-bold px-3 py-1 hover:bg-surface-container-low transition-colors rounded-lg">EN/PT</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="px-margin-mobile pt-base pb-xl max-w-screen-md mx-auto">
+<!-- Breadcrumbs / Action Row -->
+<div class="flex items-center justify-between my-sm">
+<a class="flex items-center gap-xs text-primary font-label-md text-label-md hover:bg-surface-container-low py-2 px-3 rounded-lg transition-all active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined text-[18px]">keyboard_backspace</span>
+                Voltar à Loja
+            </a>
+<button class="bg-secondary-container text-on-secondary-container font-label-md text-label-md flex items-center gap-base px-4 py-2 rounded-full hover:bg-secondary transition-all active:scale-90 duration-200">
+<span class="material-symbols-outlined">download</span>
+                Descarregar PDF
+            </button>
+</div>
+<!-- Catalog Viewer Container -->
+<section class="catalog-shadow bg-surface-container-lowest rounded-xl overflow-hidden border border-outline-variant/30 flex flex-col items-center">
+<!-- PDF Toolbar Mockup -->
+<div class="w-full bg-surface-container-low border-b border-outline-variant p-sm flex items-center justify-between">
+<div class="flex items-center gap-base">
+<span class="material-symbols-outlined text-on-surface-variant">description</span>
+<span class="font-label-md text-label-md text-on-surface">Catalogo_Izzy_2024.pdf</span>
+</div>
+<div class="flex items-center gap-sm">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary">zoom_in</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary">zoom_out</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary">fullscreen</button>
+</div>
+</div>
+<!-- PDF Page View -->
+<div class="relative w-full aspect-[1/1.4] bg-surface-container flex flex-col items-center justify-center p-md overflow-hidden">
+<!-- Large PDF Placeholder Design -->
+<div class="w-full h-full bg-white rounded-sm shadow-inner relative flex flex-col items-center justify-start overflow-y-auto">
+<!-- Catalog Cover Image -->
+<div class="w-full h-full bg-cover bg-center flex items-center justify-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAW1pCJRoA8Twoiym_YLOMmCxiaNDaifX3GhCxI42bFkt8wYXMVb0tAEnpGzB8oGCX1Tvb-46kaaCQbDniytJFKBceaehQOdZwTJ_KV4TWTmhJJ5JNzgIG9pMt9xGcJBJA0O6p-5L9fRHfp_u24Wxt0ofa3GQEBemoM4LD9J8aKwpap5h0EB5YQaCLwAvLsBDJtX1YxSoC_TZH6G0mrCrzNm6wDsARmdQqaNyctSxz1-_dyJfi-DDhBSJRGGlUYYQFCLsGRB4txfxBg')">
+<div class="absolute inset-0 bg-primary/20 backdrop-blur-[2px]"></div>
+<div class="relative z-10 text-center p-md flex flex-col items-center gap-md">
+<div class="w-24 h-24 bg-white rounded-full p-2 shadow-lg mb-sm">
+<img alt="Izzy Logo" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkjzLXA0R_218FM6jOLdNE19J8m77FG63G3hW5MRFdIjU5MJRR4MHlvd-byKlR05QpIcRcmL_lGLsNmDMibpUmgcRUtHxiFM4fvpG5atyrBi-5NrTbtzd9FQpnuqZujZqDbTOxw1GXa3UIzkmA1hIhEtfG7DulewW0uAkzyiWXk3Cs4ib0ddTLHLAgtgGtAgmN0CkEHT8s-e1GOoIjAAZs6Jx1bJcMUGWNJk4QlddW8QFeqsmun3aMAeFvqh5jiQFENgfI5rkgKBac">
+</div>
+<h2 class="text-white font-headline-xl text-[32px] leading-tight drop-shadow-md">CATÁLOGO GERAL 2024</h2>
+<p class="text-white font-label-md text-label-md bg-secondary/80 px-4 py-2 rounded-full uppercase tracking-widest">Izzy Essencial</p>
+<div class="mt-lg w-12 h-1 bg-white/50 rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Floating Navigation Overlay -->
+<div class="absolute bottom-base left-1/2 -translate-x-1/2 flex items-center gap-base bg-surface/90 backdrop-blur-md px-4 py-2 rounded-full shadow-lg border border-outline-variant">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary">chevron_left</button>
+<span class="font-label-md text-label-md text-on-surface">Página 1 de 24</span>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary">chevron_right</button>
+</div>
+</div>
+</section>
+<!-- Secondary CTA -->
+<div class="mt-lg flex flex-col items-center gap-md text-center">
+<h3 class="font-headline-md text-on-surface">Produtos Frescos &amp; Higiene</h3>
+<p class="font-body-md text-on-surface-variant px-sm">Explore a nossa gama completa de produtos de limpeza, conveniência e muito mais, agora disponíveis para entrega rápida.</p>
+<button class="w-full bg-primary text-on-primary font-headline-md py-4 rounded-xl shadow-md transition-all active:scale-95 duration-150 flex items-center justify-center gap-base">Visite a Nossa Loja
+                <span class="material-symbols-outlined">store</span></button>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container dark:bg-surface-container-highest text-primary dark:text-primary-fixed-dim font-body-md text-body-md w-full rounded-none bg-surface-container flex flex-col items-center gap-gutter p-xl text-center mb-20">
+<div class="font-headline-md text-headline-md text-on-surface font-bold">Izzy Essencial</div>
+<div class="flex flex-wrap justify-center gap-md">
+<a class="text-on-surface-variant hover:text-primary transition-all duration-300" href="#">Contactos</a>
+<span class="text-on-surface-variant">Horário: 08:00 - 20:00</span>
+<a class="text-on-surface-variant hover:text-primary transition-all duration-300" href="#">Localização</a>
+<a class="text-on-surface-variant hover:text-primary transition-all duration-300" href="#">Termos</a>
+</div>
+<p class="text-on-surface-variant opacity-70">© 2024 Izzy Essencial. Mozambique.</p>
+</footer>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 right-0 flex justify-around items-center py-base px-2 bg-surface dark:bg-surface-container-lowest text-primary dark:text-primary-fixed-dim font-label-md text-label-md fixed bottom-0 w-full z-50 border-t border-outline-variant dark:border-outline bg-surface shadow-lg">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">home</span>
+            Início
+        </a>
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 hover:bg-surface-container-high transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">storefront</span>
+            Catálogo
+        </a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all active:scale-90 duration-200 relative" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+            Carrinho
+            <span class="absolute -top-1 right-2 bg-error text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">2</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all active:scale-90 duration-200" href="#"><span class="material-symbols-outlined">location_on</span>Localiza'ção</a>
+</nav>
+<script>
+        // Simple micro-interaction for PDF paging feeling
+        document.querySelectorAll('.material-symbols-outlined').forEach(icon => {
+            icon.addEventListener('click', function() {
+                if (this.textContent === 'chevron_right' || this.textContent === 'chevron_left') {
+                    const viewer = this.closest('section').querySelector('.aspect-\\[1\\/1\\.4\\]');
+                    viewer.style.opacity = '0.5';
+                    setTimeout(() => {
+                        viewer.style.opacity = '1';
+                    }, 200);
+                }
+            });
+        });
+    </script>
+
+
+</body></html>

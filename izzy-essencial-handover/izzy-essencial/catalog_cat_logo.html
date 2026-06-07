@@ -1,0 +1,272 @@
+<!DOCTYPE html><html class="light" lang="pt-MZ"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .product-card-shadow {
+            box-shadow: 0 4px 12px -2px rgba(30, 58, 95, 0.15);
+        }
+        .active-filter {
+            background-color: #006388;
+            color: #ffffff;
+        }
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#f9f9ff",
+                        "on-primary-fixed-variant": "#004c6a",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed-dim": "#7ed0ff",
+                        "tertiary": "#745b00",
+                        "surface-container-highest": "#d5e3ff",
+                        "inverse-surface": "#133155",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed": "#001e2d",
+                        "on-primary-container": "#fcfcff",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#584400",
+                        "tertiary-fixed-dim": "#ebc246",
+                        "surface-container-low": "#f0f3ff",
+                        "on-background": "#001c3b",
+                        "on-surface": "#001c3b",
+                        "outline": "#6f787f",
+                        "surface-container": "#e7eeff",
+                        "on-secondary-fixed": "#00210c",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#9df3b1",
+                        "surface-dim": "#c7dbff",
+                        "primary": "#006388",
+                        "inverse-primary": "#7ed0ff",
+                        "surface": "#f9f9ff",
+                        "on-surface-variant": "#3f484e",
+                        "secondary-fixed-dim": "#84d99a",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-high": "#dee9ff",
+                        "surface-bright": "#f9f9ff",
+                        "primary-fixed": "#c5e7ff",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed": "#ffe08b",
+                        "outline-variant": "#bfc8cf",
+                        "on-secondary-container": "#18713d",
+                        "secondary": "#106d39",
+                        "inverse-on-surface": "#ebf1ff",
+                        "error": "#ba1a1a",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed": "#a0f5b4",
+                        "tertiary-container": "#cda72b",
+                        "surface-variant": "#d5e3ff",
+                        "primary-container": "#187da8",
+                        "on-secondary-fixed-variant": "#005228",
+                        "on-tertiary-fixed": "#241a00",
+                        "surface-tint": "#00658b",
+                        "on-tertiary-container": "#4f3d00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "48px",
+                        "xl": "80px",
+                        "xs": "4px",
+                        "margin-desktop": "64px",
+                        "sm": "12px",
+                        "gutter": "24px",
+                        "md": "24px",
+                        "margin-mobile": "16px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Inter"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "headline-xl": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                        "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface text-primary dark:text-primary-fixed-dim docked full-width top-0 sticky border-b border-outline-variant dark:border-outline shadow-sm flex justify-between items-center px-margin-mobile w-full z-50 h-16">
+<div class="flex items-center gap-base">
+<span class="material-symbols-outlined text-primary" data-icon="menu">menu</span>
+<h1 class="font-headline-md text-headline-md-mobile text-primary dark:text-primary-fixed-dim font-bold">Izzy Essencial</h1>
+</div>
+<button class="bg-surface-container-low transition-colors hover:bg-surface-container-high px-4 py-2 rounded-lg font-label-md text-label-md Active: scale-95 duration-150">
+            EN/PT
+        </button>
+</header>
+<main class="px-margin-mobile pt-base">
+<!-- Search Bar Section -->
+<section class="mt-base">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full pl-12 pr-4 py-4 bg-surface-container-lowest border border-outline-variant rounded-xl focus:ring-2 focus:ring-primary outline-none transition-all placeholder:text-on-surface-variant/60 font-body-md text-body-md" placeholder="Procurar produtos / Search products" type="text">
+</div>
+</section>
+<!-- Filters Section -->
+<section class="mt-md">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-sm">Categorias</h2>
+<div class="flex gap-sm overflow-x-auto pb-base snap-x">
+<button class="active-filter whitespace-nowrap px-6 py-2 rounded-full border border-outline-variant font-label-md text-label-md transition-all snap-start" onclick="toggleFilter(this)">Todos</button>
+<button class="bg-surface-container-low text-on-surface-variant whitespace-nowrap px-6 py-2 rounded-full border border-outline-variant font-label-md text-label-md transition-all snap-start" onclick="toggleFilter(this)">Limpeza / Cleaning</button>
+<button class="bg-surface-container-low text-on-surface-variant whitespace-nowrap px-6 py-2 rounded-full border border-outline-variant font-label-md text-label-md transition-all snap-start" onclick="toggleFilter(this)">Geral / General</button>
+<button class="bg-surface-container-low text-on-surface-variant whitespace-nowrap px-6 py-2 rounded-full border border-outline-variant font-label-md text-label-md transition-all snap-start" onclick="toggleFilter(this)">Lanches / Snacks</button>
+</div>
+</section>
+<!-- Product Grid -->
+<section class="mt-md grid grid-cols-2 gap-4">
+<!-- Product Card 1 -->
+<div class="product-card-shadow bg-surface-container-lowest rounded-xl overflow-hidden flex flex-col hover:-translate-y-1 transition-transform duration-200">
+<div class="h-40 w-full bg-surface-container relative overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A macro photograph of professional laundry detergent bottles in a clean, brightly lit modern laundry room. The lighting is soft and airy with high-key whites and subtle blue tones reflecting the Izzy Essencial brand identity. The product stands out with crisp focus against a blurred minimalist background, conveying a sense of premium cleanliness and reliability." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAUVRuo7ALSCxgG-X1KwySANGCPBBw8uwDKSiDUTH7ZM1qu17hEO0QJu4jPfLhM0Fh_auFDPjFEOPKWB62DPAaoLtxDZkuV2kUkd5mLnTctGhuLmp-S1s_EinjxWyFPDojI8ilpDr5jQOBcPBo0_mamsy91QPibglGHPnN_V-2aqBxm7RyadPE8xq1jH6MpPUpVcy7wKdksa3upK2McUkVkCN5QOYasyoRgGbHkJcajZxdWmWi2bG5qtHg9MIHX2MNiTV9vpM_Z3fa">
+<span class="absolute top-2 right-2 bg-secondary-container text-on-secondary-container text-xs font-bold px-2 py-1 rounded-full">-10%</span>
+</div>
+<div class="p-base flex flex-col flex-grow">
+<h3 class="font-label-md text-label-md text-on-surface line-clamp-2 min-h-[40px]">Detergente Máquina / Washing Detergent</h3>
+<p class="font-headline-md text-primary mt-xs">250 MT</p>
+
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="product-card-shadow bg-surface-container-lowest rounded-xl overflow-hidden flex flex-col hover:-translate-y-1 transition-transform duration-200">
+<div class="h-40 w-full bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Clear plastic water bottles arranged in a geometric pattern on a polished white surface. Bright studio lighting creates soft reflections and emphasizes the crystalline transparency of the water, aligning with a modern corporate and trustworthy aesthetic. The color palette is dominated by pure whites and subtle aquamarine hints, reflecting the effortless reliability of Izzy Essencial." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSvP7_FSvjLUXFcusMeJ5h7S4INNynRJdtLIuo6Ki7glPk6GHGxWAZDbUgD38LBL_OrQlkbD4c18I1qY0gLbu-gJ9pH_ZP0e1seuJ3JtecWJupJH4rSyIKRZ2pywoptSiuix16BTChhMOrRbWs0Mxx5mnLNcMq0eC-n6O1o_mDh8GsCtcf5CZ9LhA91WLttE7F3BMoTKszz6IOPol0mAGDoI1B8BaeokUC4P98lCC0SS6TfwZ22yJHPNbJUf9pzeIFheNGbv4NeDn6">
+</div>
+<div class="p-base flex flex-col flex-grow">
+<h3 class="font-label-md text-label-md text-on-surface line-clamp-2 min-h-[40px]">Água Mineral 1.5L / Mineral Water</h3>
+<p class="font-headline-md text-primary mt-xs">45 MT</p>
+
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="product-card-shadow bg-surface-container-lowest rounded-xl overflow-hidden flex flex-col hover:-translate-y-1 transition-transform duration-200">
+<div class="h-40 w-full bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Assorted colorful potato chip bags and healthy snack bars displayed on a minimalist shelf with soft, diffused top lighting. The setting is clean and contemporary, utilizing a high-contrast legibility style that bridges cultural and language gaps. Accents of gold and green reflect the brand's friendly neighborhood shop personality while maintaining professional stability." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-GpkcK3yh3R4QYAdkef9PMtnQMgW2NeOqYJ2imQ63K2tTPICxaAXd1cgjsYuwyRy-OLnF38mk4dnCfOTBpyUR-jEyu_1rp0iXjIPn0AnEUSkbsoQbdQvu2LFUTv-iOWXsMMDSPggZO-dTXBcyqXt3tRCdm1EYAEANzstaCRPys6glM0asrfDtekjRlZ3KdbArCZWhbqyMdc8Zf6wY2rQb7MBEmeVEiNIeahkDELO17tNH_B0VpnS13F_0JxFR4dOuYR9C6MPbxEXc">
+</div>
+<div class="p-base flex flex-col flex-grow">
+<h3 class="font-label-md text-label-md text-on-surface line-clamp-2 min-h-[40px]">Batatas Fritas / Potato Chips</h3>
+<p class="font-headline-md text-primary mt-xs">120 MT</p>
+
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="product-card-shadow bg-surface-container-lowest rounded-xl overflow-hidden flex flex-col hover:-translate-y-1 transition-transform duration-200">
+<div class="h-40 w-full bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A collection of eco-friendly household cleaning items including a wooden brush and natural fiber cloths arranged on a white marble countertop. The image uses bright daylight to create an inviting, approachable atmosphere. The composition follows the Izzy Essencial modern corporate aesthetic with mathematical harmony and vibrant, clean energy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9lbA_LmLyby6Ar99BnowQPCOCcb8mnyUXxNhm1dxjavG09HT2ns8B0kTOEcLuDIc0ElV5bdMtRpURb-sKlHEKDTfa3mfaXJeCkaaUjVRISohUoZyLZ_tF_xdERjAxUvP8kfRek-he5vnlRcT2x3F1StSKZ_BRIJ_yOIsen19W-mVIZf6kUEOmakyNAOD6nACgPS6QrccPn0VSfgMujjvrQvZN-Lp9q9r31Bu_nKqEaAE1nGfZsbJM3y1P4XTfP5OI2TXC_2t6sL5s">
+</div>
+<div class="p-base flex flex-col flex-grow">
+<h3 class="font-label-md text-label-md text-on-surface line-clamp-2 min-h-[40px]">Esponja Multiuso / Multi-purpose Sponge</h3>
+<p class="font-headline-md text-primary mt-xs">60 MT</p>
+
+</div>
+</div>
+<!-- Product Card 5 -->
+<div class="product-card-shadow bg-surface-container-lowest rounded-xl overflow-hidden flex flex-col hover:-translate-y-1 transition-transform duration-200">
+<div class="h-40 w-full bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Artisanal baked goods and premium coffee beans presented in a bright, modern cafe setting. Soft ambient shadows and tonal layers create a reachable, professional feel. High-contrast typography and clear visual hierarchy reflect the multi-generational accessibility of the Izzy Essencial convenience provider in Mozambique." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqt_2uC8VV_CmLzVoSDb3TVvvxrzz47P07mQq0hZatSKkJpGJnhHELjcKBEBIkinTv4lmKDehn4CkdzwTXbzHMurW3OEa9v-r17rDc__j-iODebn5X-z-3cExp5U2Uw9jCWKP8UtIhRpTsl-qzPteidPqmVHZbUs8FWAchJgkMQ2HTtmeIvGrwlSQD_tVqmaJYTLVh1u61PbklVaOTiHeCkYhuYx52nvB55l1UJGaHs0fHxDviKRmVnPkrx3aPWAK4VrjkSUGSksxJ">
+</div>
+<div class="p-base flex flex-col flex-grow">
+<h3 class="font-label-md text-label-md text-on-surface line-clamp-2 min-h-[40px]">Pão Fresco / Fresh Bread</h3>
+<p class="font-headline-md text-primary mt-xs">30 MT</p>
+
+</div>
+</div>
+<!-- Product Card 6 -->
+<div class="product-card-shadow bg-surface-container-lowest rounded-xl overflow-hidden flex flex-col hover:-translate-y-1 transition-transform duration-200">
+<div class="h-40 w-full bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A clean kitchen workspace with organized cleaning sprays and microfiber cloths. The lighting is crisp and modern, emphasizing high-contrast legibility. The palette includes professional navy and fresh green tones, creating an emotional response of relief and confidence for customers looking for easy convenience at Izzy Essencial." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkBdwrTXy0mpw7oZIzEy7YsmCu9iXAecRaoq821WmG_Z9dTg-YDHk6koGLvmi5KI_597ECURfb6m9d6WoHVDPMN7LmrW18R9v-wkfp7a0OqBBIRXSXfI0tVFyh8TN3BFn0AyJo8AQnjPrEPX8Q4qX5oScwlpbzitd0m07LJgyqG87_tg8tBSyNL6ro2j99e-RuT-T3KHZ5feulhuvjUfUaCxLDTdV1_nX2E_xRM9qx4pldGe5a65nyuuZ3R4ig0DJXZoUIEIyeK9_y">
+</div>
+<div class="p-base flex flex-col flex-grow">
+<h3 class="font-label-md text-label-md text-on-surface line-clamp-2 min-h-[40px]">Limpador Vidros / Glass Cleaner</h3>
+<p class="font-headline-md text-primary mt-xs">180 MT</p>
+
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Information -->
+<footer class="bg-surface-container dark:bg-surface-container-highest w-full rounded-none bg-surface-container flat no shadows flex flex-col items-center gap-gutter p-xl text-center mb-20 transition-all duration-300">
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold">Izzy Essencial</h2>
+<div class="flex flex-wrap justify-center gap-md font-body-md text-body-md text-on-surface-variant">
+<span class="hover:text-primary cursor-pointer transition-colors">Contactos</span>
+<span class="">Horário: 08:00 - 20:00</span>
+<span class="hover:text-primary cursor-pointer transition-colors">Localização</span>
+<span class="hover:text-primary cursor-pointer transition-colors">Termos</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">© 2026 Izzy Essencial. Mozambique.</p>
+</footer>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 right-0 flex justify-around items-center py-base px-2 bg-surface dark:bg-surface-container-lowest text-primary dark:text-primary-fixed-dim border-t border-outline-variant dark:border-outline shadow-lg z-50">
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high p-2 rounded-lg transition-colors cursor-pointer">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-md text-label-md">Início</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 active:scale-90 duration-200 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+<span class="font-label-md text-label-md">Catálogo</span>
+</div>
+
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high p-2 rounded-lg transition-colors cursor-pointer">
+<span class="material-symbols-outlined" data-icon="location_on">location_on</span>
+<span class="font-label-md text-label-md">Localização</span>
+</div>
+</nav>
+<script>
+        function toggleFilter(btn) {
+            // Remove active style from all
+            const buttons = btn.parentElement.querySelectorAll('button');
+            buttons.forEach(b => {
+                b.classList.remove('active-filter');
+                b.classList.add('bg-surface-container-low', 'text-on-surface-variant');
+            });
+            // Add active style to clicked
+            btn.classList.add('active-filter');
+            btn.classList.remove('bg-surface-container-low', 'text-on-surface-variant');
+        }
+
+        // Simple animation on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 10) {
+                header.classList.add('shadow-md');
+            } else {
+                header.classList.remove('shadow-md');
+            }
+        });
+    </script>
+
+
+
+
+</body></html>
