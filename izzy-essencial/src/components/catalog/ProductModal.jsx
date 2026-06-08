@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useLanguage } from "../../context/LanguageContext.jsx";
 
 function buildWhatsappUrl(product, t) {
@@ -11,6 +11,15 @@ function buildWhatsappUrl(product, t) {
 
 export default function ProductModal({ product, onClose }) {
   const { t, lang } = useLanguage();
+
+  // React 18: the click that opens the modal is still propagating when the
+  // backdrop mounts. Delay backdrop close-handler by one frame so it doesn't
+  // immediately fire on the same event.
+  const [ready, setReady] = useState(false);
+  useEffect(() => {
+    const id = requestAnimationFrame(() => setReady(true));
+    return () => cancelAnimationFrame(id);
+  }, []);
 
   useEffect(() => {
     const onKey = (e) => { if (e.key === "Escape") onClose(); };
@@ -30,15 +39,15 @@ export default function ProductModal({ product, onClose }) {
     <div
       className="fixed inset-0 z-50 flex items-end sm:items-center justify-center"
       style={{ backdropFilter: "blur(12px)", background: "rgba(0,0,0,0.5)" }}
-      onClick={onClose}
+      onClick={ready ? onClose : undefined}
     >
-      {/* Sheet slides up from bottom on mobile, centered dialog on sm+ */}
+      {/* Sheet from bottom on mobile, centred dialog on sm+ */}
       <div
         className="bg-surface-container-lowest w-full sm:max-w-md sm:rounded-2xl rounded-t-2xl overflow-hidden shadow-2xl max-h-[90vh] flex flex-col"
         onClick={(e) => e.stopPropagation()}
         style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
       >
-        {/* Drag handle (mobile) */}
+        {/* Drag handle (mobile only) */}
         <div className="sm:hidden flex justify-center pt-3 pb-1">
           <div className="w-10 h-1 rounded-full bg-outline-variant" />
         </div>
@@ -60,7 +69,7 @@ export default function ProductModal({ product, onClose }) {
           </button>
         </div>
 
-        {/* Content — scrollable if tall */}
+        {/* Content */}
         <div className="p-5 sm:p-6 flex flex-col gap-4 overflow-y-auto">
           <div>
             <h2 className="font-display font-bold text-[20px] text-on-surface">{displayName}</h2>

@@ -15,7 +15,7 @@ export default function ProductCard({ product, onClick }) {
 
   return (
     <div
-      onClick={() => onClick(product)}
+      onClick={(e) => { e.stopPropagation(); onClick(product); }}
       className="bg-surface-container-lowest rounded-xl shadow-card hover:shadow-card-hover hover:-translate-y-1.5 hover:scale-[1.02] transition-all duration-200 cursor-pointer overflow-hidden flex flex-col"
     >
       {/* Image */}
