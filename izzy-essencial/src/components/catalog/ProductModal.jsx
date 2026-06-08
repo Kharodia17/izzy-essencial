@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { useLanguage } from "../../context/LanguageContext.jsx";
 
 function buildWhatsappUrl(product, t) {
@@ -12,13 +13,12 @@ function buildWhatsappUrl(product, t) {
 export default function ProductModal({ product, onClose }) {
   const { t, lang } = useLanguage();
 
-  // React 18: the click that opens the modal is still propagating when the
-  // backdrop mounts. Delay backdrop close-handler by one frame so it doesn't
-  // immediately fire on the same event.
+  // Delay backdrop close-handler by one tick so the click that opened the
+  // modal doesn't immediately close it (React 18 event delegation + mobile).
   const [ready, setReady] = useState(false);
   useEffect(() => {
-    const id = requestAnimationFrame(() => setReady(true));
-    return () => cancelAnimationFrame(id);
+    const id = setTimeout(() => setReady(true), 0);
+    return () => clearTimeout(id);
   }, []);
 
   useEffect(() => {
@@ -35,9 +35,11 @@ export default function ProductModal({ product, onClose }) {
 
   const displayName = lang === "en" && product.nameEn ? product.nameEn : product.name;
 
-  return (
+  // Render into document.body via portal — escapes all CSS stacking contexts
+  // (backdrop-filter, sticky, transforms) that would trap fixed positioning.
+  return createPortal(
     <div
-      className="fixed inset-0 z-50 flex items-end sm:items-center justify-center"
+      className="fixed inset-0 z-[9999] flex items-end sm:items-center justify-center"
       style={{ backdropFilter: "blur(12px)", background: "rgba(0,0,0,0.5)" }}
       onClick={ready ? onClose : undefined}
     >
@@ -55,7 +57,11 @@ export default function ProductModal({ product, onClose }) {
         {/* Image */}
         <div className="relative h-52 sm:h-60 bg-surface-container flex-shrink-0">
           {product.imageUrl ? (
-            <img src={product.imageUrl} alt={displayName} className="w-full h-full object-cover" />
+            <img
+              src={product.imageUrl}
+              alt={displayName}
+              className="w-full h-full object-cover"
+            />
           ) : (
             <div className="w-full h-full flex items-center justify-center">
               <span className="material-symbols-outlined text-[72px] text-outline-variant">inventory_2</span>
@@ -102,6 +108,7 @@ export default function ProductModal({ product, onClose }) {
           </a>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
