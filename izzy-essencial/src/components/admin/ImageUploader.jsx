@@ -1,11 +1,24 @@
 import { useState } from "react";
 
+function extractDriveId(url) {
+  if (!url) return null;
+  // https://drive.google.com/file/d/FILE_ID/view
+  const fileMatch = url.match(/drive\.google\.com\/file\/d\/([a-zA-Z0-9_-]+)/);
+  if (fileMatch) return fileMatch[1];
+  // https://drive.google.com/open?id=FILE_ID
+  const openMatch = url.match(/[?&]id=([a-zA-Z0-9_-]+)/);
+  if (openMatch) return openMatch[1];
+  // https://drive.google.com/uc?export=view&id=FILE_ID (already converted)
+  const ucMatch = url.match(/uc\?.*id=([a-zA-Z0-9_-]+)/);
+  if (ucMatch) return ucMatch[1];
+  return null;
+}
+
 function toDriveDirectUrl(url) {
   if (!url) return url;
-  // Convert share link: https://drive.google.com/file/d/FILE_ID/view?...
-  const match = url.match(/drive\.google\.com\/file\/d\/([^/]+)/);
-  if (match) return `https://drive.google.com/uc?export=view&id=${match[1]}`;
-  // Already a direct uc link — leave it
+  const id = extractDriveId(url);
+  // thumbnail?sz=w1000 bypasses the virus-scan interstitial that uc?export=view hits
+  if (id) return `https://drive.google.com/thumbnail?id=${id}&sz=w1000`;
   return url;
 }
 
